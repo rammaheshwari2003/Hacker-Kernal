@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Page</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+
+    <div class="sidemenu">
+        <aside>
+            <h2>Admin</h2> <hr>
+            <a href="/user/home">Home</a>
+            <a href="/user/adduser">User Add</a>
+            <a href="/user/createtask">Create Task</a>
+            <a href="/user/display">Display</a>
+        </aside>
+
+        <div class="tableshow">
+            <div id="tablemain">
+            <h1>Display</h1>
+             <a href="/user/download">
+    <button>Download</button>
+        </a> 
+</div>
+        <hr>
+            
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Task</th>
+                    <th>Task Description</th>
+                    <th>Task Status</th>
+                </tr>
+
+               {{#each mydata}} 
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.task}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.status}}</td>
+            </tr>
+            {{/each}}
+            </table>
+            
+        </div>
+        
+    </div>
+
+    
+       
+
+</body>
+</html>

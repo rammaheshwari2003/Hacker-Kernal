@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Form</title>
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="sidemenu">
+    <aside>
+      <h2>Admin</h2> <hr>
+      <a href="/user/home">Home</a>
+      <a href="/user/adduser">User Add</a>
+      <a href="/user/createtask">Create Task</a>
+      <a href="/user/display">Display</a>
+    </aside>
+
+    <div class="TaskForm">
+      <div class="taskdata">
+        <h2>Add Task</h2> <hr>
+        <form method="post" action="/user/addtask">
+          <div class="main">
+            <label>User Name :</label>
+            <select name="name" >
+              <option>Select</option>
+              {{#each UserData}}
+              <option>{{this.name}}</option>
+              {{/each}}
+            </select>
+          </div>
+          
+          <div class="main">
+
+            <label>Task :</label>
+            <input type="text" name="task" placeholder="Enter Task"/>
+          </div>
+
+          <div class="main">
+            <label>Description :</label>
+            <input type="text" name="description" placeholder="Task Description" />
+          </div>
+
+          <div class="main">
+            <label>Task Status :</label>
+            <select name="status">
+              <option>Select</option>
+              <option>Pending</option>
+              <option>Done</option>
+            </select>
+          </div>
+
+          <button type="submit">Task Assign</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+     document.querySelector('form').addEventListener('submit', function(e) {
+   alert("User Task Assign Successfully");
+     });
+</script>
+
+
+</body>
+</html>
