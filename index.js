@@ -19,7 +19,10 @@ sequelize.sync().then(() => {
 app.set('view engine', 'hbs')
 app.use("/user", UserRoute);
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.set('views', path.join(__dirname, 'views'));
+app.use("/", (req, res)=>{
+    res.render("home");
+})
 
 app.listen(8000,()=>{
     console.log("Server run on 8000 port");
